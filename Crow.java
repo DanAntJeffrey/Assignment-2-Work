@@ -6,13 +6,11 @@
 * @since   2025-12-4
 */
 
-
 public final class Crow extends Animal {
    /**
     * Create height variable.
     */
    private int height;
-
 
    /**
     * Creates Hare constructor that sets all starting variables.
@@ -23,7 +21,6 @@ public final class Crow extends Animal {
     * @param newNumberOfLegs
     * @param newAnimalSound
     */
-
 
    public Crow(final String newName, final String newColor,
    final int newMaxSpeed, final int newNumberOfLegs,
@@ -42,7 +39,6 @@ public final class Crow extends Animal {
    public void specialAbility(final int abilityModifier) {
        this.height = abilityModifier;
    }
-
 
    /**
     * Creates accelerate method.

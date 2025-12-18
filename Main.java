@@ -44,7 +44,7 @@ public final class Main {
        System.out.println(
            "_____________________________________________________");
        System.out.println(
-           "\u001B[32m" + "THE TORTOISE AND THE HARE (AND OTHERS)"
+           "\u001B[32m" + "THE TORTOISE AND THE HARE"
            + "\u001B[0m" + ": A SHORT STORY");
        System.out.println("______________________________________");
        // create Hare object, use methods
@@ -85,11 +85,17 @@ public final class Main {
 
 
        System.out.println("As the pair stepped up to the line, "
-       + tortoise.getName() + "realized they weren't alone!");
+       + tortoise.getName() + " realized they weren't alone!");
 
-
-       Crow crow = new Crow(
+        Crow crow = new Crow(
            "Crow", "black", crowMaxSpeed, crowLegs, "CAWWWWWWW", crowHeight);
+       System.out.println("'" + crow.getAnimalSound() + "!' went " + crow.getName() + ", with " + crow.getColor() + " wings spread aglown.");
+
+         System.out.println("The racers set their marks, and the forest watched as the racers begun to show sparks!");
+         hare.accelerate(hareLegPower, 5);
+         tortoise.accelerate(1, 5);
+         crow.accelerate(2, 5);
+         System.out.println(hare.getName() + " shot forward with all his might, "
 
 
 
