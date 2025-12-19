@@ -33,11 +33,9 @@ public class Tortoise extends Animal {
     */
    public Tortoise(final String newName, final String newColor,
    final int newMaxSpeed, final int newNumberOfLegs,
-   final String newAnimalSound, final int newShellDurability,
-   final String newShellColor) {
+   final String newAnimalSound, final int newShellDurability) {
        super(newName, newColor, newMaxSpeed, newNumberOfLegs, newAnimalSound);
        this.shellDurability = newShellDurability;
-       this.shellColor = newShellColor;
    }
 
    /**
@@ -48,7 +46,7 @@ public class Tortoise extends Animal {
    @Override
    public void specialAbility(final int abilityModifier) {
         this.shellDurability = abilityModifier;
-        this.shellColor = "Rainbow";
+        setColor("Rainbow");
        }
 
 
@@ -79,6 +77,15 @@ public class Tortoise extends Animal {
        if (super.getSpeed() < 0) {
            super.setSpeed(0);
        }
+   }
+
+   /**
+    * This function gets the shell durability.
+    *
+    * @return shellDurability returns the shell durability
+    */
+   public int getShellDurability() {
+       return shellDurability;
    }
 }
 

@@ -67,7 +67,13 @@ public final class Crow extends Animal {
            super.setSpeed(0);
        }
    }
+
+   /**
+    * This function gets the height.
+    *
+    * @return height returns the height
+    */
+   public int getHeight() {
+       return height;
+   }
 }
-
-
-

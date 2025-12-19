@@ -127,17 +127,6 @@ public abstract class Animal {
        return maxSpeed;
    }
 
-
-   /**
-    * This function sets a new animalSound.
-    *
-    * @param newAnimalSound is a new animalSound
-    */
-   public void setAnimalSound(final String newAnimalSound) {
-       animalSound = newAnimalSound;
-   }
-
-
    /**
     * This function gets the animalSound.
     *
@@ -145,16 +134,6 @@ public abstract class Animal {
     */
    public String getAnimalSound() {
        return animalSound;
-   }
-
-
-   /**
-    * This function sets a new name.
-    *
-    * @param newName is a new name
-    */
-   public void setName(final String newName) {
-       name = newName;
    }
 
 
