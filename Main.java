@@ -1,9 +1,9 @@
 /*
-* This is the main code that runs with the Animal and other classes.
+* This is the main code that runs with the Animal and other classes. It tells the main story and uses classes to make animal objects and perform methods on them
 *
 * @author  D Jeffrey
 * @version 1.0
-* @since   20240-01-01
+* @since   2025-12-19
 */
 
 
@@ -30,15 +30,29 @@ public final class Main {
    */
    public static void main(final String[] args) {
        // MultipleStringLiterals & MagicNumbers
-       final int hareMaxSpeed = 100;
-       final int hareLegs = 2;
-       final int hareLegPower = 10;
-       final int tortoiseMaxSpeed = 10;
-       final int tortoiseLegs = 4;
-       final int tortoiseShellDurability = 100;
-       final int crowMaxSpeed = 20;
-       final int crowLegs = 2;
-       final int crowHeight = 2;
+        final int chameleonMaxSpeed = 20;
+        final int chameleonLegs = 4;
+        final int crowMaxSpeed = 20;
+        final int crowLegs = 2;
+        final int crowHeight = 2;
+        final int hareMaxSpeed = 100;
+        final int hareLegs = 2;
+        final int hareLegPower = 10;
+        final int tortoiseMaxSpeed = 10;
+        final int tortoiseLegs = 4;
+        final int tortoiseShellDurability = 100;
+
+        final int accelerationPowerOne = 1;
+        final int accelerationPowerTwo = 2;
+        final int accelerationPowerThree = 3;
+        final int accelerationPowerTen = 10;
+        final int accelerationPowerOneHundred = 100;
+        final int accelerationTimeFive = 5;
+        final int accelerationTimeTwo = 2;
+
+        final int specialAbilityModifierTwo = 2;
+        final int specialAbilityModifierTwoHundred = 200;
+
 
 
        System.out.println(
@@ -60,7 +74,7 @@ public final class Main {
 
        // this is the main story, using all methods and
        System.out.println("Take a seat and listen well,"
-           + " as I tell the story of a turt in his shell...");
+        + " as I tell the story of a turt in his shell...");
        System.out.println("You might be in for quite a scare,"
        + " as you learn of a villain by the name of " + hare.getName() + "!");
        System.out.println("You see, " + hare.getName() + " asked "
@@ -73,62 +87,76 @@ public final class Main {
        + " in the sun, while " + tortoise.getName() + "'s scales were "
        + tortoise.getColor() + ", he knew there'd be no fun.\n");
 
-
-        System.out.println("As the pair stepped up to the line, "
-        + tortoise.getName() + " realized they weren't alone!");
-
+        // create crow and chameleon objects
         Crow crow = new Crow(
            "Crow", "black", crowMaxSpeed, crowLegs, "CAWWWWWWW", crowHeight);
+        Chameleon chameleon = new Chameleon("Chameleon", "green", chameleonMaxSpeed, chameleonLegs, "Hehehehe");
+        
+        // give introductions to the crow and chameleon
+        System.out.println("As the pair stepped up to the line, "
+        + tortoise.getName() + " realized they weren't alone!");
         System.out.println("'" + crow.getAnimalSound() + "!' went " + crow.getName() + ", with " + crow.getColor() + " wings spread aglown.");
-
-        Chameleon chameleon = new Chameleon("Chameleon", "green", tortoiseMaxSpeed, tortoiseLegs, "Hehehehe");
         System.out.println(chameleon.getAnimalSound() + " went " + chameleon.getName() + " with " + chameleon.getColor() + " skin, and a silly grin.\n");
-        chameleon.specialAbility(2);
+        chameleon.specialAbility(specialAbilityModifierTwo);
 
+        // race beginning
         System.out.println("The racers set their marks, and the forest watched as the racers begun to show sparks!");
-        hare.accelerate(hareLegPower, 5);
-        tortoise.accelerate(1, 5);
-        crow.accelerate(2, 5);
-        chameleon.accelerate(1, 5);
+        hare.accelerate(hareLegPower, accelerationTimeFive);
+        tortoise.accelerate(accelerationPowerThree, accelerationTimeFive);
+        crow.accelerate(accelerationPowerTwo, accelerationTimeFive);
+        chameleon.accelerate(accelerationPowerOne, accelerationTimeFive);
         System.out.println(hare.getName() + " shot forward with all his might, a blazing " + hare.getSpeed() + " m/s, what a sight!");
         System.out.println(tortoise.getName() + " plodded on, steady and slow, at " + tortoise.getSpeed() + " m/s, taking it low.");
-        System.out.println(crow.getName() + " flapped its wings and took to the sky, soaring at " + crow.getSpeed() + " m/s, though not very high.\n");
+        System.out.println(crow.getName() + " flapped its wings and took to the sky, soaring at " + crow.getSpeed() + " m/s, though not very high.");
+        System.out.println(chameleon.getName() + " was slow, only moving at " + chameleon.getSpeed() + " m/s, but now she used " + chameleon.getNumberOfLegs() + " just like " + crow.getName() + ".\n");
 
+        // obstacle 1
         System.out.println("Then came the first obstacle, a wide stream to cross, though not hard for " + hare.getName() + ", he was the boss!");
-        hare.brake(10, 2);
-        tortoise.accelerate(10, 2);
+        System.out.println("'My legs are " + hare.getLegPower() + " elephants strong, I'll jump over this stream with a song.'");
+        hare.brake(accelerationPowerTen, accelerationTimeTwo);
+        tortoise.accelerate(accelerationPowerTen, accelerationTimeTwo);
         System.out.println(hare.getName() + " had to brake to get over the stream, while " + crow.getName() + " flew like a beam, and " + tortoise.getName() + " swam with ease.");
         System.out.println("After the stream, " + hare.getName() + " sped off again, leaving " + tortoise.getName() + " behind, feeling the pain.");
         System.out.println(hare.getAnimalSound() + "! he shouted, as he raced ahead, thinking of victory and the glory to be had.");
         System.out.println(tortoise.getAnimalSound() + "! responded " + tortoise.getName() + " (for Tortoise was quiet), knowing that winning was his purpose.\n");
 
+        // obstacle 2
         System.out.println("By a stroke of luck, the three animals came upon the next obstacle all at once, a tall mountain to make them grunt!");
         System.out.println("'No problem', thought " + hare.getName() + ", 'I'll show them my skill and reach the top of this uphill'.");
-        hare.specialAbility(200);
+        hare.specialAbility(specialAbilityModifierTwoHundred);
         System.out.println(hare.getName() + "'s special ability activated, his speed increased to " + hare.getMaxSpeed() + " m/s, he was elated!");
         System.out.println(hare.getName() + "'s " + hare.getNumberOfLegs() + " legs carried him high, but knocked rocks off the mountain, big enough to make " + tortoise.getName() + " and " + crow.getName() + " say goodbye...");
-        tortoise.specialAbility(200);
+        tortoise.specialAbility(specialAbilityModifierTwoHundred);
         System.out.println("Before they could get crushed, " + tortoise.getName() + " ran to protect " + crow.getName() + ", his shell grew to the strength of " + tortoise.getShellDurability() + " steel ingots.");
-        System.out.println("As " + crow.getName() + " looked up, he saw " + tortoise.getName() + "'s shell shining " + tortoise.getColor() + " like a trinket\n");
-        System.out.println("\n'You saved me!', " + crow.getName() + " exclaimed,'I'll help you win this race and get all the fame!'");
-        crow.specialAbility(200);
-        crow.accelerate(100, 2);
+        System.out.println("As " + crow.getName() + " looked up, he saw " + tortoise.getName() + "'s shell shining " + tortoise.getColor() + " like a trinket.\n");
+        
+        // crow decideds to help tortoise
+        System.out.println("'You saved me!', " + crow.getName() + " exclaimed,'I'll help you win this race and get all the fame!'");
+        crow.specialAbility(specialAbilityModifierTwoHundred);
+        crow.accelerate(accelerationPowerOneHundred, accelerationTimeTwo);
         tortoise.setSpeed(crow.getSpeed());
         System.out.println("Without a word, " + crow.getName() + "'s talons grabbed " + tortoise.getName() + "'s shell, and Crow soared higher than ever!");
         System.out.println("With " + crow.getName() + " and " + tortoise.getName() + " flying " + crow.getHeight() + "m high, " + hare.getName() + " was left far behind.\n");
-        hare.brake(10, 2);
+        hare.brake(accelerationPowerTen, accelerationTimeTwo);
+        
+        // obstacles continue
         System.out.println("Obstacles came and went as the three animals raced on, each with their own special abilities and strengths.");
         System.out.println("The race was neck and neck when the final obstacle came into view, the gorilla of the forest trained in Kung Fu!");
-        hare.brake(100, 2);
-        tortoise.brake(100, 2);
-        crow.brake(100, 2);
+        hare.brake(accelerationPowerOneHundred, accelerationTimeTwo);
+        tortoise.brake(accelerationPowerOneHundred, accelerationTimeTwo);
+        crow.brake(accelerationPowerOneHundred, accelerationTimeTwo);
         System.out.println("The race was now a stalemate, since " + hare.getName() + ", " + tortoise.getName() + ", and " + crow.getName() + " didn't want to get ate!");
-        hare.specialAbility(200);
+        hare.specialAbility(specialAbilityModifierTwoHundred);
         System.out.println("As the gorilla approached with his mean face, " + hare.getName() + " ran far away, abandoning the race.\n");
+
+        // end sequence
         System.out.println("But " + tortoise.getName() + " stood his ground, even against the gorilla, probably 600 pounds!");
-        chameleon.brake(1, 2);
+        chameleon.brake(accelerationPowerOne, accelerationTimeTwo);
         chameleon.setColor("green");
         System.out.println("Before his big arms could start the attack, gorilla heard a noise and decided to look back.\n");
+
+        // end sequence 2
+        System.out.println(chameleon.getName() + " crossed the finish line, and just in the nick of time.");
         System.out.println("'" + chameleon.getAnimalSound() + "', went " + chameleon.getName() + ", her " + chameleon.getColor() + " scales now visible.");
         System.out.println("'I bet y'all didn't see me when I went invisible!");
         System.out.println("'While you were all fighting and battling, I kept my cool and ignored all the prattling'");
@@ -137,9 +165,9 @@ public final class Main {
         System.out.println(chameleon.getName() + " taught the forest a lesson with her charming wit");
         System.out.println("Progress is still progress, even if others don't see it.");
 
+        // end of story print and banner
         System.out.println("\n_____________________________________________________");
         System.out.println("THE END");
-
         System.out.println("\u001B[32m" + "                      _       _._");
         System.out.println("               _,,-''' ''-,_ }'._''.,_.=._");
         System.out.println("            ,-'      _ _    '        (  @)'-,");
@@ -162,6 +190,3 @@ public final class Main {
 
    }
 }
-
-
-

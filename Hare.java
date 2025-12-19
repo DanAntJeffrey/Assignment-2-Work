@@ -14,11 +14,6 @@ public final class Hare extends Animal {
    private int legPower;
 
 
-   /**
-    * Create shellColor variable.
-    */
-   private String demonName;
-
 
    /**
     * Creates Hare constructor that sets all starting variables.
@@ -29,7 +24,6 @@ public final class Hare extends Animal {
     * @param newNumberOfLegs
     * @param newAnimalSound
     * @param newLegPower
-    * @param newDemonName
     */
 
 
@@ -79,6 +73,15 @@ public final class Hare extends Animal {
        if (super.getSpeed() < 0) {
            super.setSpeed(0);
        }
+   }
+
+   /**
+    * This function gets the number of legs.
+    *
+    * @return legPower returns the legPower
+    */
+   public int getLegPower() {
+       return legPower;
    }
 }
 
