@@ -49,7 +49,7 @@ public final class Main {
        System.out.println("______________________________________");
        // create Hare object, use methods
        Hare hare = new Hare("Hare", "brown", hareMaxSpeed, hareLegs,
-       "Gloink", hareLegPower, "Logan");
+       "Gloink", hareLegPower);
 
 
        //create Tortoise object
@@ -62,13 +62,13 @@ public final class Main {
        System.out.println("Take a seat and listen well,"
            + " as I tell the story of a turt in his shell...");
   
-       System.out.println("\nYou might be in for quite a scare,"
+       System.out.println("You might be in for quite a scare,"
        + " as you learn of a villain by the name of " + hare.getName() + "!");
 
 
-       System.out.println("\nYou see, " + hare.getName() + " asked "
+       System.out.println("You see, " + hare.getName() + " asked "
        + tortoise.getName() + " to compete in a race, all so "
-       + hare.getName() + " could laugh in his face!");
+       + hare.getName() + " could laugh in his face!\n");
 
 
        System.out.println(hare.getName() + " was confident he'd win in a jiffy"
@@ -81,25 +81,36 @@ public final class Main {
 
        System.out.println(hare.getName() + "'s hair was a deep " + hare.getColor()
        + " in the sun, while " + tortoise.getName() + "'s scales were "
-       + tortoise.getColor() + ", he knew there'd be no fun.");
+       + tortoise.getColor() + ", he knew there'd be no fun.\n");
 
 
-       System.out.println("As the pair stepped up to the line, "
-       + tortoise.getName() + " realized they weren't alone!");
+        System.out.println("As the pair stepped up to the line, "
+        + tortoise.getName() + " realized they weren't alone!");
 
         Crow crow = new Crow(
            "Crow", "black", crowMaxSpeed, crowLegs, "CAWWWWWWW", crowHeight);
-       System.out.println("'" + crow.getAnimalSound() + "!' went " + crow.getName() + ", with " + crow.getColor() + " wings spread aglown.");
+        System.out.println("'" + crow.getAnimalSound() + "!' went " + crow.getName() + ", with " + crow.getColor() + " wings spread aglown.\n");
 
-         System.out.println("The racers set their marks, and the forest watched as the racers begun to show sparks!");
-         hare.accelerate(hareLegPower, 5);
-         tortoise.accelerate(1, 5);
-         crow.accelerate(2, 5);
-         System.out.println(hare.getName() + " shot forward with all his might, "
+        System.out.println("The racers set their marks, and the forest watched as the racers begun to show sparks!");
+        hare.accelerate(hareLegPower, 5);
+        tortoise.accelerate(1, 5);
+        crow.accelerate(2, 5);
+        System.out.println(hare.getName() + " shot forward with all his might, a blazing " + hare.getSpeed() + " m/s, what a sight!");
+        System.out.println(tortoise.getName() + " plodded on, steady and slow, at " + tortoise.getSpeed() + " m/s, taking it low.");
+        System.out.println(crow.getName() + " flapped its wings and took to the sky, soaring at " + crow.getSpeed() + " m/s, though not very high.\n");
 
+        System.out.println("Then came the first obstacle, a wide stream to cross, though not hard for " + hare.getName() + ", he was the boss!");
+        hare.brake(10, 2);
+        tortoise.accelerate(10, 2);
+        System.out.println(hare.getName() + " had to brake to get over the stream, while " + crow.getName() + " flew like a beam, and " + tortoise.getName() + " swam with ease.");
+        System.out.println("After the stream, " + hare.getName() + " sped off again, leaving " + tortoise.getName() + " behind, feeling the pain.");
+        System.out.println(hare.getAnimalSound() + "! he shouted, as he raced ahead, thinking of victory and the glory to be had.");
+        System.out.println(tortoise.getAnimalSound() + "! responded " + tortoise.getName() + " (for Tortoise was quiet), knowing that winning was his purpose.\n");
 
-
-
+        System.out.println("By a stroke of luck, the three animals came upon the next obstacle all at once, a tall mountain to make them grunt!");
+        System.out.println("'No problem', thought " + hare.getName() + ", 'I'll show them my skill and reach the top of this uphill.'");
+        hare.specialAbility(2000);
+        System.out.println(hare.getName() + "'s special ability activated, his speed increased to " + hare.getMaxSpeed() + " m/s, he was elated!"); 
        System.out.println("\nDone.");
    }
 }

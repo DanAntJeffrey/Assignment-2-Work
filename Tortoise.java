@@ -21,12 +21,6 @@ public class Tortoise extends Animal {
 
 
    /**
-    * Create godMode variable.
-    */
-   private boolean godMode;
-
-
-   /**
     * Creates Tortoise constructor that sets all starting variables.
     *
     * @param newName
@@ -46,15 +40,6 @@ public class Tortoise extends Animal {
        this.shellColor = newShellColor;
    }
 
-
-   /**
-    * Creates godModeActivation method.
-    */
-   public void godModeActivation() {
-       this.godMode = true;
-   }
-
-
    /**
     * Creates specialAbility method.
     *
@@ -62,11 +47,9 @@ public class Tortoise extends Animal {
     */
    @Override
    public void specialAbility(final int abilityModifier) {
-       if (godMode) {
-           this.shellDurability = abilityModifier;
-           this.shellColor = "Rainbow";
+        this.shellDurability = abilityModifier;
+        this.shellColor = "Rainbow";
        }
-   }
 
 
    /**

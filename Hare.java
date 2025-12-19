@@ -35,11 +35,9 @@ public final class Hare extends Animal {
 
    public Hare(final String newName, final String newColor,
    final int newMaxSpeed, final int newNumberOfLegs,
-   final String newAnimalSound, final int newLegPower,
-   final String newDemonName) {
+   final String newAnimalSound, final int newLegPower) {
        super(newName, newColor, newMaxSpeed, newNumberOfLegs, newAnimalSound);
        this.legPower = newLegPower;
-       this.demonName = demonName;
    }
 
 
@@ -52,7 +50,6 @@ public final class Hare extends Animal {
    public void specialAbility(final int abilityModifier) {
        super.setMaxSpeed(abilityModifier);
        super.setSpeed(abilityModifier);
-       this.demonName = "Killer Evil Hare";
    }
 
 
